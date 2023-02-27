@@ -1,9 +1,36 @@
 package com.Movie.IMDB.rating;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+//This is entity for springboot if we replace entity with Model then it will store in database in the form of rows and coloumn
+@Entity
 public class Movie {
+
+    @Id   //Setting primary key (Below one int variable)
+    @GeneratedValue(strategy = GenerationType.AUTO) // Auto generated value for integer Id
     private int id;
     private String movieName;
     private String movieDescription;
+
+    @Override
+    public String toString() //To converted into Json
+    {
+        return "Movie{" +
+                "id=" + id +
+                ", movieName='" + movieName + '\'' +
+                ", movieDescription='" + movieDescription + '\'' +
+                '}';
+    }
+
+    public Movie()
+    {
+        this.id=0;
+        this.movieName="";
+        this.movieDescription="";
+    }
 
     public Movie(int id, String movieName, String movieDescription) {
         // This keyword is refer to the current context of java class class
