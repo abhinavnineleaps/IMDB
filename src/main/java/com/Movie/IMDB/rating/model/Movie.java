@@ -1,4 +1,4 @@
-package com.Movie.IMDB.rating;
+package com.Movie.IMDB.rating.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
