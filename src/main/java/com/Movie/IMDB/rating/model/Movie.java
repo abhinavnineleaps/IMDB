@@ -1,11 +1,10 @@
 package com.Movie.IMDB.rating.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 //This is entity for springboot if we replace entity with Model then it will store in database in the form of rows and coloumn
+
+// This basically tells springboot to create a table to store the data
 @Entity
 public class Movie {
 
@@ -15,8 +14,9 @@ public class Movie {
     private String movieName;
     private String movieDescription;
 
+
     @Override
-    public String toString() //To converted into Json
+    public String toString() // keys are converted into string format
     {
         return "Movie{" +
                 "id=" + id +
@@ -25,11 +25,10 @@ public class Movie {
                 '}';
     }
 
-    public Movie()
-    {
-        this.id=0;
-        this.movieName="";
-        this.movieDescription="";
+    public Movie() {
+        this.id = 0;
+        this.movieName = "";
+        this.movieDescription = "";
     }
 
     public Movie(int id, String movieName, String movieDescription) {
